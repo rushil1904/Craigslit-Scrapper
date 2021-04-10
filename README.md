@@ -2,7 +2,7 @@
 
 Here's [Craiglist Scrapper](https://scrapper-craigslist.herokuapp.com ), a website providing you a visually appealing and faster way to use Craigslist.
 
-The site returns results for the New Delhi location. 
+The site returns results for the Delhi location. 
 
 Framework: **Django**
 

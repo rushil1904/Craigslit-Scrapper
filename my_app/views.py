@@ -6,5 +6,10 @@ def home(request):
 
 def new_search(request):
     search = request.POST.get('search')
-    print(search)
-    return render(request, 'my_app/new_search.html')
+    final_postings = []
+    stuff_for_frontend = {
+        'search': search,
+        'final_postings': final_postings,
+
+    }
+    return render(request, 'my_app/new_search.html', stuff_for_frontend)

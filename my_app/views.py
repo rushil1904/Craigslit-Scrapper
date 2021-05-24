@@ -17,6 +17,11 @@ def new_search(request):
     final_url = BASE_CRAIGSLIST_URL.format(quote_plus(search))
     response = requests.get(final_url)
     data = response.text
+    soup = BeautifulSoup(data,features='html.parser')
+    post_listings = soup.find_all('li', {'class': 'result-row'})
+    post_title = post_listings[0].find(class_='result-title').text
+    post_url = post_listings.find('a').get('href')
+    post_price = post_listings.find(class_='result-price').text
     print(data)
     final_postings = []
     stuff_for_frontend = {
